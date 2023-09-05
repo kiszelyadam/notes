@@ -1,0 +1,14 @@
+<ng-container *ngFor="let note of notes">
+  <div class="notes">
+    <p class="notes-detail"><span>Cím:</span> {{ note?.title }}</p>
+    <p class="notes-detail"><span>Leírás:</span> {{ note?.description }}</p>
+    <p class="notes-detail">
+      <span>Létrehozva:</span> {{ note?.publishDate | date : "yyyy-MM-dd HH:mm" }}
+    </p>
+    <p class="notes-detail"><span>Létrehozó:</span> {{ note?.owner }}</p>
+    <div class="notes-actions" >
+      <button class="notes-button margin-right" [routerLink]="['/', 'jegyzet', note?.id]">Módosítás</button>
+      <button class="notes-button margin-right" (click)="openDialog(note.id)" >Törlés</button>
+    </div>
+  </div>
+</ng-container>

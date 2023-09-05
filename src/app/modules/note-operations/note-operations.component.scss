@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.notes-form {
+    display: flex;
+    flex-direction: column;
+
+    > input, textarea {
+        width: 50%;
+        margin: 10px 0px;
+        padding: 10px 0px;
+        @media screen and (max-width: 795px) {
+            width: 100%;
+        }
+    }
+
+    textarea {
+        resize: none;
+    }
+}
+
+.note-error {
+    color: firebrick;
+    padding: 12px;
+}

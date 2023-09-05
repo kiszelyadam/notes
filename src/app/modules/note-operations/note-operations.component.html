@@ -1,0 +1,14 @@
+<ng-container *ngIf="(noteData$ | async)"></ng-container>
+
+<button class="notes-button" [routerLink]="['/']">
+    Vissza
+</button>
+
+<form class="notes-form" [formGroup]="notes">
+    <input formControlName="title" type="text" placeholder="Jegyzet cím">
+    <textarea formControlName="description" rows="10" placeholder="Jegyzet leírás"></textarea>
+</form>
+
+<span *ngIf="hasFormError" class="note-error">{{noteError}}</span>
+
+<button (click)="createOrModifiyNote()" class="notes-button">{{isNew ? 'Létrehozás' : 'Módosítás'}}</button>

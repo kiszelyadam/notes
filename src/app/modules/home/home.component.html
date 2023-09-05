@@ -1,0 +1,11 @@
+<button class="notes-button" [routerLink]="['/', 'letrehozas']">
+  Új jegyzet létrehozása
+</button>
+<app-notes-list (openModal)="open($event)" [notes]="note$ | async"></app-notes-list>
+
+<ng-container *ngIf="isVisible">
+  <div (click)="overlay_click()" class="modal-overlay" >
+      <app-delete-modal [@animation] [noteIdent]="noteId!" (modalActions)="modalActions($event)" (click)="$event.stopPropagation()"></app-delete-modal>     
+  </div>
+  
+</ng-container>

@@ -1,0 +1,30 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes {
+    border: 0.5px solid black;
+    width: 50%;
+    margin: 10px 0px;
+
+    @media screen and (max-width: 795px) {
+        width: 100%;
+    }
+
+    &-detail {
+        padding: 10px;
+        span {
+            font-weight: bold;
+        }
+    }
+
+    &-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .margin-right {
+        margin-right: 10px;;
+    }
+}
